@@ -1,9 +1,10 @@
-var fs = require('fs')
+var fs = require('fs');
 
-fs.readFile(process.argv[2],function(error,data){
-  var lines = data.toString().split('\n').length - 1 
+fs.readFile(process.argv[2], function(error,data) {
+  if (error) throw error;
+  var lines = data.toString().split('\n').length - 1;
   // just as split(" ") gives an array of words in a sentence..
-  console.log(lines)
+  console.log(lines);
 })
 
 
